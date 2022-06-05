@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    /* position: absolute; */
+    width: 100vw;
+    height: 100vh;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-around; */
+}
+
+/* parallelograms */
+#back-plane {
+    position: absolute;
+    width: 250px;
+    height: 180px;
+    border: 1px solid #0033cc;
+    background-color: #0033cc;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#front-plane {
+    position: absolute;
+    width: 250px;
+    height: 180px;
+    border: 1px solid #ff0000;
+    background-color: #ff0000;
+    top: calc(50% + 50px);
+    left: calc(50% - 50px);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10;
+}
+
+#right-plane {
+    position: absolute;
+    width: 50px;
+    height: 180px;
+    border: 1px solid #33cc33;
+    background-color: #33cc33;
+    top: calc(50% + 25px);
+    left: calc(50% + 100px);
+    -webkit-transform: translateX(-50%) translateY(-50%) skewY(-45deg);
+    transform: translateX(-50%) translateY(-50%) skewY(-45deg);
+    z-index: 5;
+}
+
+#left-plane {
+    position: absolute;
+    width: 50px;
+    height: 180px;
+    border: 1px solid #ff9900;
+    background-color: #ff9900;
+    top: calc(50% + 25px);
+    left: calc(50% - 150px);
+    -webkit-transform: translateX(-50%) translateY(-50%) skewY(-45deg);
+    transform: translateX(-50%) translateY(-50%) skewY(-45deg);
+    z-index: 5;
+}
+
+#top-plane {
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    border: 1px solid #9900cc;
+    background-color: #9900cc;
+    top: calc(50% - 65px);
+    left: calc(50% - 25px);
+    -webkit-transform: translateX(-50%) translateY(-50%) skewX(-45deg);
+    transform: translateX(-50%) translateY(-50%) skewX(-45deg);
+    z-index: 5;
+    animation: popping-cap 3s infinite;
+}
+
+@keyframes popping-cap {
+    from {
+        top: calc(50% - 65px);
+    }
+
+    to {
+        top: calc(50% - 165px);
+    }
+}
